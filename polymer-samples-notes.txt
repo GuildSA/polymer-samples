@@ -1,7 +1,4 @@
 
-
-
-
  -- app-route -- 
 
 
@@ -9,6 +6,27 @@ bower install
 sudo npm install polyserve -g
 polyserve
 
+
+--------------------------------------------------------------------------
+
+ -- gh-issues -- 
+
+
+Based on a iron-ajax tutorial
+https://www.youtube.com/watch?v=k1eR_3KqJms&list=PLNYkxOF6rcIDdS7HWIC_BYRunV6MHs5xo&index=23
+
+sudo npm install polyserve -g
+sudo npm install -g generator-polymer
+
+cd Desktop/
+mkdir gh-issues
+cd gh-issues/
+
+yo polymer:seed gh-issues
+
+bower install --save Polymerelements/iron-ajax
+
+polyserve
 
 
 --------------------------------------------------------------------------
@@ -91,26 +109,6 @@ gulp serve
 
 sudo chown -R $USER:$GROUP ~/.npm
 sudo chown -R $USER:$GROUP ~/.config
-
---------------------------------------------------------------------------
-
- -- iron-ajax tutorial --
-
-https://www.youtube.com/watch?v=k1eR_3KqJms&list=PLNYkxOF6rcIDdS7HWIC_BYRunV6MHs5xo&index=23
-
-sudo npm install polyserve -g
-sudo npm install -g generator-polymer
-
-cd Desktop/
-mkdir gh-issues
-cd gh-issues/
-
-yo polymer:seed gh-issues
-
-bower install --save Polymerelements/iron-ajax
-
-polyserve
-
 
 --------------------------------------------------------------------------
 
