@@ -1,0 +1,50 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+
+  <title>my-carousel demo</title>
+
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="my-carousel.html">
+</head>
+
+<style>
+  my-carousel {
+    width: 100%;
+    contain: content;
+  }
+
+  my-carousel::after {
+    display: block;
+    content: '';
+    padding-top: 75%; /* 4:3 = height is 75% of width */
+  }
+
+  my-carousel img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<body>
+  
+  <my-carousel>
+    <img src="https://app-layout-assets.appspot.com/assets/bg1.jpg">
+    <img src="https://app-layout-assets.appspot.com/assets/bg2.jpg">
+    <img src="https://app-layout-assets.appspot.com/assets/bg3.jpg">
+    <img src="https://app-layout-assets.appspot.com/assets/bg4.jpg">
+  </my-carousel>
+
+</body>
+
+<!--<script>
+  // Switch the selected image on an interval.
+  const carousel = document.querySelector('my-carousel');
+  setInterval(_ => carousel.next(), 3000);
+</script>-->
+
+</html>
