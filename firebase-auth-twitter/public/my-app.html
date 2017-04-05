@@ -1,0 +1,25 @@
+<link rel="import" href="my-login.html">
+<link rel="import" href="my-twitter-login.html">
+<link rel="import" href="bower_components/polymerfire/firebase-app.html">
+<link rel="import" href="my-subscription.html">
+<link rel="import" href="my-notes.html">
+
+<dom-module id="my-app">
+    <template>
+        <firebase-app
+            auth-domain="fir-auth-27dcd.firebaseapp.com"
+            database-url="https://fir-auth-27dcd.firebaseio.com"
+            api-key=" AIzaSyBYcvzJmw3YN7s8rQDUTWGiU-X4rR1d6gI"
+            messaging-sender-id="673643260130">
+        </firebase-app>
+
+        
+
+    </template>
+
+    <script>
+        Polymer({
+            is: 'my-app'
+        });
+    </script>
+</dom-module>

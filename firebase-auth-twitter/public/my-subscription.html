@@ -1,0 +1,48 @@
+<link rel="import" href="bower_components/polymerfire/firebase-auth.html">
+<link rel="import" href="bower_components/polymerfire/firebase-document.html">
+<link rel="import" href="bower_compenents/polymerfire/firebase-messaging.html">
+<link rel="import" href="bower_components/paper-toggle-button/paper-toggle-button.html">
+
+<dom-module id="my-subscription">
+    <template>
+
+        <firebase-auth user ="{{user}}"></firebase-auth>
+
+        <firebase-messaging id="messaging"
+            token="{{token}}"
+            on-message="handleMessage">
+        </firebase-messaging>
+
+        <firebase-document
+            path="/users/[[user.uid]]/token"
+            data="[[token]]">
+        </firebase-document>
+
+        <paper-toggle-button
+            id="subscribe"
+            on-tap="toggleSubscription"
+            checked="[[token]]">
+            Subscribe to Notifications
+        </paper-toggle-button>
+        <p>Token:</p>
+        <p>[[token]]</p>
+
+    </template>
+
+    <script>
+        Polymer({
+            is: 'my-subscription',
+            toggleSubscription: function() {
+                this.$.messaging.requestPermission().then(function() {
+                    
+                }, function(err) {
+
+                });
+            },
+        
+        handleMessage: function() {
+            console.log('message received', arguments);
+         }
+      });
+    </script>
+</dom-module>
