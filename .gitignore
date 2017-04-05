@@ -1,1 +1,5 @@
 .DS_Store
+
+# Dev directories
+bower_components/
+node_modules/
